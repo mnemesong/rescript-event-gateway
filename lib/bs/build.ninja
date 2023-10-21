@@ -1,0 +1,19 @@
+rescript = 1
+rule astj
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe"  -bs-v 10.1.4  -absname -bs-ast -o $out $i
+o rescript\test-app\JsonRecordEventGatewayTest.ast : astj ..\..\rescript\test-app\JsonRecordEventGatewayTest.res
+rule deps
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsb_helper.exe" -hash 22cf96582a1669fa74aafb0fe69f876f $in
+  restat = 1
+o rescript\test-app\JsonRecordEventGatewayTest.d : deps rescript\test-app\JsonRecordEventGatewayTest.ast
+rule mij
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I "rescript\src" -I "rescript\test-app" -I rescript   -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o rescript\test-app\JsonRecordEventGatewayTest.cmj rescript\test-app\JsonRecordEventGatewayTest.cmi ..\js\rescript\test-app\JsonRecordEventGatewayTest.bs.js : mij rescript\test-app\JsonRecordEventGatewayTest.ast
+o rescript\src\EventGateway.ast : astj ..\..\rescript\src\EventGateway.res
+o rescript\src\EventGateway.d : deps rescript\src\EventGateway.ast
+o rescript\src\EventGateway.cmj rescript\src\EventGateway.cmi ..\js\rescript\src\EventGateway.bs.js : mij rescript\src\EventGateway.ast
+o rescript\src\JsonRecordEventGateway.ast : astj ..\..\rescript\src\JsonRecordEventGateway.res
+o rescript\src\JsonRecordEventGateway.d : deps rescript\src\JsonRecordEventGateway.ast
+o rescript\src\JsonRecordEventGateway.cmj rescript\src\JsonRecordEventGateway.cmi ..\js\rescript\src\JsonRecordEventGateway.bs.js : mij rescript\src\JsonRecordEventGateway.ast

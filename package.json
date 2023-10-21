@@ -1,0 +1,28 @@
+{
+  "name": "rescript-event-gateway",
+  "version": "0.0.1",
+  "description": "event-store-gateway abstract module for rescript",
+  "main": "index.js",
+  "scripts": {
+    "res:build": "rescript",
+    "res:dev": "rescript build -w",
+    "test:run": "node ./lib/js/rescript/test-app/JsonRecordEventGatewayTest.bs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnemesong/rescript-event-gateway.git"
+  },
+  "keywords": [],
+  "author": "Anatoly Starodubtsev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mnemesong/rescript-event-gateway/issues"
+  },
+  "homepage": "https://github.com/mnemesong/rescript-event-gateway#readme",
+  "devDependencies": {
+    "rescript": "^10.1.4"
+  },
+  "dependencies": {
+    "json-records": "*"
+  }
+}
