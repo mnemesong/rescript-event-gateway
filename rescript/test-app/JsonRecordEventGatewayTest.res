@@ -37,5 +37,7 @@ Ok()
 ->Result.flatMap(() => TestJsonRecordEventGateway.createTableIfNotExist())
 ->Result.flatMap(() => TestJsonRecordEventGateway.insertEvents([#event1, #event2, #event1]))
 ->Result.flatMap(() => TestJsonRecordEventGateway.getEvents(0, None)->Result.map(Js.Console.log))
+->Result.map(() => Js.Console.log("---"))
+->Result.flatMap(() => TestJsonRecordEventGateway.getEvents(1, Some(1))->Result.map(Js.Console.log))
 ->Result.flatMap(() => TestJsonRecordEventGateway.dropTableIfExist())
 ->Js.Console.log
