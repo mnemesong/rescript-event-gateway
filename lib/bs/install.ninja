@@ -7,8 +7,12 @@ o EventGateway.cmi : cp ..\bs\src\EventGateway.cmi
 o EventGateway.cmj : cp ..\bs\src\EventGateway.cmj
 o EventGateway.cmt : cp ..\bs\src\EventGateway.cmt
 o EventGateway.res : cp ..\..\src\EventGateway.res
+o EventGateway.resi : cp ..\..\src\EventGateway.resi
+o EventGateway.cmti : cp ..\bs\src\EventGateway.cmti
 o JsonRecordEventGateway.cmi : cp ..\bs\src\JsonRecordEventGateway.cmi
 o JsonRecordEventGateway.cmj : cp ..\bs\src\JsonRecordEventGateway.cmj
 o JsonRecordEventGateway.cmt : cp ..\bs\src\JsonRecordEventGateway.cmt
 o JsonRecordEventGateway.res : cp ..\..\src\JsonRecordEventGateway.res
+o JsonRecordEventGateway.resi : cp ..\..\src\JsonRecordEventGateway.resi
+o JsonRecordEventGateway.cmti : cp ..\bs\src\JsonRecordEventGateway.cmti
 build install.stamp : touch EventGateway.cmi EventGateway.cmj JsonRecordEventGateway.cmi JsonRecordEventGateway.cmj 

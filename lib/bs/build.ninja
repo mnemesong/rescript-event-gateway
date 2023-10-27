@@ -16,12 +16,20 @@ o src\EventGateway.ast : astj ..\..\src\EventGateway.res
 rule deps
   command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsb_helper.exe" -hash fb1d54f984465daf72bd982d28ce3efc $in
   restat = 1
-o src\EventGateway.d : deps src\EventGateway.ast
-rule mij
-  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I src -I "D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml"   -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js -bs-v $g_finger $i
+o src\EventGateway.d : deps src\EventGateway.ast src\EventGateway.iast
+o src\EventGateway.iast : astj ..\..\src\EventGateway.resi
+rule mi
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I src -I "D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml"   -bs-v $g_finger $i
   dyndep = 1
   restat = 1
-o src\EventGateway.cmj src\EventGateway.cmi ..\js\src\EventGateway.bs.js : mij src\EventGateway.ast
+o src\EventGateway.cmi : mi src\EventGateway.iast
+rule mj
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -bs-read-cmi -I src -I "D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml"   -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src\EventGateway.cmj ..\js\src\EventGateway.bs.js : mj src\EventGateway.ast src\EventGateway.cmi
 o src\JsonRecordEventGateway.ast : astj ..\..\src\JsonRecordEventGateway.res
-o src\JsonRecordEventGateway.d : deps src\JsonRecordEventGateway.ast
-o src\JsonRecordEventGateway.cmj src\JsonRecordEventGateway.cmi ..\js\src\JsonRecordEventGateway.bs.js : mij src\JsonRecordEventGateway.ast
+o src\JsonRecordEventGateway.d : deps src\JsonRecordEventGateway.ast src\JsonRecordEventGateway.iast
+o src\JsonRecordEventGateway.iast : astj ..\..\src\JsonRecordEventGateway.resi
+o src\JsonRecordEventGateway.cmi : mi src\JsonRecordEventGateway.iast
+o src\JsonRecordEventGateway.cmj ..\js\src\JsonRecordEventGateway.bs.js : mj src\JsonRecordEventGateway.ast src\JsonRecordEventGateway.cmi

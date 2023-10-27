@@ -14,3 +14,16 @@
 117	148	13591656579993935	test-app/JsonRecordEventGatewayTest.cmj	946b555d5075d010
 117	148	13591656579993935	test-app/JsonRecordEventGatewayTest.cmi	946b555d5075d010
 117	148	13591656579993935	../js/test-app/JsonRecordEventGatewayTest.bs.js	946b555d5075d010
+1	21	13591658192697090	src/JsonRecordEventGateway.iast	91612aafdc364dd4
+6	23	13591658192697090	src/EventGateway.iast	e4ebc00d15c96bc2
+23	29	13591658192697090	src/EventGateway.d	eece1ddb29336b7e
+21	33	13591658192697090	src/JsonRecordEventGateway.d	98d24a35fc1fb650
+29	80	13591658192853091	src/EventGateway.cmi	b8da93ee0de31536
+80	104	13591658192853091	src/EventGateway.cmj	223a509a98c091f2
+80	104	13591658192853091	../js/src/EventGateway.bs.js	223a509a98c091f2
+84	107	13591658193529121	src/JsonRecordEventGateway.cmi	1bcbddf27b0d9943
+107	136	13591658193529121	src/JsonRecordEventGateway.cmj	37fa9e82c0ffd72d
+107	136	13591658193529121	../js/src/JsonRecordEventGateway.bs.js	37fa9e82c0ffd72d
+137	165	13591658193529121	test-app/JsonRecordEventGatewayTest.cmj	946b555d5075d010
+137	165	13591658193529121	test-app/JsonRecordEventGatewayTest.cmi	946b555d5075d010
+137	165	13591658193529121	../js/test-app/JsonRecordEventGatewayTest.bs.js	946b555d5075d010
