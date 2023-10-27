@@ -3,16 +3,12 @@ rule cp
   command = cmd.exe /C copy /Y $i $out >NUL
 rule touch
  command = cmd.exe /C type nul >>$out & copy $out+,, >NUL
-o JsonRecordEventGatewayTest.cmi : cp ..\bs\rescript\test-app\JsonRecordEventGatewayTest.cmi
-o JsonRecordEventGatewayTest.cmj : cp ..\bs\rescript\test-app\JsonRecordEventGatewayTest.cmj
-o JsonRecordEventGatewayTest.cmt : cp ..\bs\rescript\test-app\JsonRecordEventGatewayTest.cmt
-o JsonRecordEventGatewayTest.res : cp ..\..\rescript\test-app\JsonRecordEventGatewayTest.res
-o EventGateway.cmi : cp ..\bs\rescript\src\EventGateway.cmi
-o EventGateway.cmj : cp ..\bs\rescript\src\EventGateway.cmj
-o EventGateway.cmt : cp ..\bs\rescript\src\EventGateway.cmt
-o EventGateway.res : cp ..\..\rescript\src\EventGateway.res
-o JsonRecordEventGateway.cmi : cp ..\bs\rescript\src\JsonRecordEventGateway.cmi
-o JsonRecordEventGateway.cmj : cp ..\bs\rescript\src\JsonRecordEventGateway.cmj
-o JsonRecordEventGateway.cmt : cp ..\bs\rescript\src\JsonRecordEventGateway.cmt
-o JsonRecordEventGateway.res : cp ..\..\rescript\src\JsonRecordEventGateway.res
-build install.stamp : touch JsonRecordEventGatewayTest.cmi JsonRecordEventGatewayTest.cmj EventGateway.cmi EventGateway.cmj JsonRecordEventGateway.cmi JsonRecordEventGateway.cmj 
+o EventGateway.cmi : cp ..\bs\src\EventGateway.cmi
+o EventGateway.cmj : cp ..\bs\src\EventGateway.cmj
+o EventGateway.cmt : cp ..\bs\src\EventGateway.cmt
+o EventGateway.res : cp ..\..\src\EventGateway.res
+o JsonRecordEventGateway.cmi : cp ..\bs\src\JsonRecordEventGateway.cmi
+o JsonRecordEventGateway.cmj : cp ..\bs\src\JsonRecordEventGateway.cmj
+o JsonRecordEventGateway.cmt : cp ..\bs\src\JsonRecordEventGateway.cmt
+o JsonRecordEventGateway.res : cp ..\..\src\JsonRecordEventGateway.res
+build install.stamp : touch EventGateway.cmi EventGateway.cmj JsonRecordEventGateway.cmi JsonRecordEventGateway.cmj 

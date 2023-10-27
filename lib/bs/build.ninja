@@ -1,19 +1,27 @@
 rescript = 1
+g_finger := D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml\install.stamp
 rule astj
   command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe"  -bs-v 10.1.4  -absname -bs-ast -o $out $i
-o rescript\test-app\JsonRecordEventGatewayTest.ast : astj ..\..\rescript\test-app\JsonRecordEventGatewayTest.res
-rule deps
-  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsb_helper.exe" -hash 22cf96582a1669fa74aafb0fe69f876f $in
+o test-app\JsonRecordEventGatewayTest.ast : astj ..\..\test-app\JsonRecordEventGatewayTest.res
+rule deps_dev
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsb_helper.exe" -g -hash fb1d54f984465daf72bd982d28ce3efc $in
   restat = 1
-o rescript\test-app\JsonRecordEventGatewayTest.d : deps rescript\test-app\JsonRecordEventGatewayTest.ast
-rule mij
-  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I "rescript\src" -I "rescript\test-app" -I rescript   -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js $i
+o test-app\JsonRecordEventGatewayTest.d : deps_dev test-app\JsonRecordEventGatewayTest.ast
+rule mij_dev
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I test-app -I src -I "D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml"    -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js -bs-v $g_finger $i
   dyndep = 1
   restat = 1
-o rescript\test-app\JsonRecordEventGatewayTest.cmj rescript\test-app\JsonRecordEventGatewayTest.cmi ..\js\rescript\test-app\JsonRecordEventGatewayTest.bs.js : mij rescript\test-app\JsonRecordEventGatewayTest.ast
-o rescript\src\EventGateway.ast : astj ..\..\rescript\src\EventGateway.res
-o rescript\src\EventGateway.d : deps rescript\src\EventGateway.ast
-o rescript\src\EventGateway.cmj rescript\src\EventGateway.cmi ..\js\rescript\src\EventGateway.bs.js : mij rescript\src\EventGateway.ast
-o rescript\src\JsonRecordEventGateway.ast : astj ..\..\rescript\src\JsonRecordEventGateway.res
-o rescript\src\JsonRecordEventGateway.d : deps rescript\src\JsonRecordEventGateway.ast
-o rescript\src\JsonRecordEventGateway.cmj rescript\src\JsonRecordEventGateway.cmi ..\js\rescript\src\JsonRecordEventGateway.bs.js : mij rescript\src\JsonRecordEventGateway.ast
+o test-app\JsonRecordEventGatewayTest.cmj test-app\JsonRecordEventGatewayTest.cmi ..\js\test-app\JsonRecordEventGatewayTest.bs.js : mij_dev test-app\JsonRecordEventGatewayTest.ast
+o src\EventGateway.ast : astj ..\..\src\EventGateway.res
+rule deps
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsb_helper.exe" -hash fb1d54f984465daf72bd982d28ce3efc $in
+  restat = 1
+o src\EventGateway.d : deps src\EventGateway.ast
+rule mij
+  command = "D:\rescript-projects\rescript-event-gateway\node_modules\rescript\win32\bsc.exe" -I src -I "D:\rescript-projects\rescript-event-gateway\node_modules\rescript-result-exn\lib\ocaml"   -bs-package-name rescript-event-gateway -bs-package-output commonjs:lib\js\$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src\EventGateway.cmj src\EventGateway.cmi ..\js\src\EventGateway.bs.js : mij src\EventGateway.ast
+o src\JsonRecordEventGateway.ast : astj ..\..\src\JsonRecordEventGateway.res
+o src\JsonRecordEventGateway.d : deps src\JsonRecordEventGateway.ast
+o src\JsonRecordEventGateway.cmj src\JsonRecordEventGateway.cmi ..\js\src\JsonRecordEventGateway.bs.js : mij src\JsonRecordEventGateway.ast

@@ -6,7 +6,7 @@
   "scripts": {
     "res:build": "rescript",
     "res:dev": "rescript build -w",
-    "test:run": "node ./lib/js/rescript/test-app/JsonRecordEventGatewayTest.bs"
+    "test:run": "node ./lib/js/test-app/JsonRecordEventGatewayTest.bs"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,10 @@
   },
   "homepage": "https://github.com/mnemesong/rescript-event-gateway#readme",
   "devDependencies": {
-    "rescript": "^10.1.4"
+    "rescript": "^10.1.4",
+    "rescript-result-exn": "^0.1.1"
   },
   "dependencies": {
-    "json-records": "*"
+    "json-records": "^2.0.1"
   }
 }

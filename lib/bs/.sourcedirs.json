@@ -1,1 +1,1 @@
-{ "dirs" : [ "rescript" , "rescript\\test-app" , "rescript\\src" ] , "pkgs" : [] , "generated" : [] }
+{ "dirs" : [ "test-app" , "src" ] , "pkgs" : [ [ "rescript-result-exn" , "D:\\rescript-projects\\rescript-event-gateway\\node_modules\\rescript-result-exn" ] ] , "generated" : [] }

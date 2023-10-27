@@ -2,8 +2,11 @@
   "name": "rescript-event-gateway",
   "sources": [
     {
-      "dir": "rescript",
-      "subdirs": true
+      "dir": "src"
+    },
+    {
+      "dir": "test-app",
+      "type": "dev"
     }
   ],
   "package-specs": [
@@ -11,5 +14,8 @@
       "module": "commonjs"
     }
   ],
-  "suffix": ".bs.js"
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "rescript-result-exn"
+  ]
 }
