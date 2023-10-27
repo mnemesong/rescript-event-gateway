@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/mnemesong/rescript-event-gateway#readme",
   "devDependencies": {
-    "rescript": "^10.1.4",
-    "rescript-result-exn": "^0.1.1"
+    "rescript": "^10.1.4"
   },
   "dependencies": {
-    "json-records": "^2.0.1"
+    "json-records": "^2.0.1",
+    "rescript-result-exn": "^0.1.1"
   }
 }
