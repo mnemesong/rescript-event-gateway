@@ -1,6 +1,6 @@
 {
   "name": "rescript-event-gateway",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "event-store-gateway abstract module for rescript",
   "main": "index.js",
   "scripts": {
